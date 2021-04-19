@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/gitBanerjee/webServer#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "g": "^2.0.1",
+    "nodemon": "^2.0.7"
   }
 }
