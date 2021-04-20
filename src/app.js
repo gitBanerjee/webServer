@@ -39,10 +39,24 @@ app.get('/help',(req,res) => {
 })
 
 app.get('/weather',(req,res) => {
-    res.render('Your weather')
+    if(!req.query.address){
+        return res.send({
+            error:'You must provide an address'
+        })
+    }
+    res.send({
+        weather: 'Your weather',
+        address: req.query.address
+    })
 })
 
-
+app.get('*',(req,res) => {
+    res.render('404',{
+        title:'404',
+        name:'Sourav Banerjee',
+        errorMessage:'Page not Found!'
+    })
+})
 
 app.listen(3000, () => {
     console.log('Server is up on port 3000.')
